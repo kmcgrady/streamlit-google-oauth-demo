@@ -9,11 +9,10 @@ SCOPES = [
   "https://www.googleapis.com/auth/spreadsheets.readonly",
 ]
 
-credentials = st_google_oauth(st.secrets["CLIENT_ID"], st.secrets["CLIENT_SECRET"], SCOPES)
-if credentials is None:
+token = st_google_oauth(st.secrets["CLIENT_ID"], st.secrets["CLIENT_SECRET"], SCOPES)
+if token is None:
   st.stop()
 
-token = credentials["access_token"]
 all_files = [{ 'id': None, 'name': "(None Selected)" }]
 needs_request = True
 nextPageToken = None
