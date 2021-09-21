@@ -3,6 +3,18 @@ import pandas as pd
 import streamlit as st
 from streamlit_google_oauth import st_google_oauth
 
+menu_options = {
+	'Get help': 'YOUR_HELP_URL',
+	'Report a bug': 'YOUR_BUG_PAGE_URL',
+	'About': '''
+	 ## My Custom App
+
+	 This app uses our ML Model to demonstrate churn prediction.   
+	'''
+}
+
+st.set_page_config(menu_options=menu_options)
+
 SCOPES = [
   "https://www.googleapis.com/auth/drive.metadata.readonly",
   "https://www.googleapis.com/auth/spreadsheets.readonly",
