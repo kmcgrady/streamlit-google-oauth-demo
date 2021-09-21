@@ -1,7 +1,6 @@
 import requests
 import pandas as pd
 import streamlit as st
-import secrets_beta
 from streamlit_google_oauth import st_google_oauth
 
 SCOPES = [
